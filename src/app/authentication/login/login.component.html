@@ -1,0 +1,68 @@
+<navbar></navbar>
+<div class="container">
+  <h2>welcome to Login page</h2>
+
+  <h2>
+    <span>Login with facebook , google or your registered email</span>
+  </h2>
+</div>
+<div class="signup-board">
+  <a
+    (click)="authService.FacebookAuth()"
+    (click)="showSpinner()"
+    class="fb btn"
+  >
+    <ngx-fa name="facebook" size="lg"></ngx-fa> acebook
+  </a>
+
+  <a
+    (click)="authService.GoogleAuth()"
+    (click)="showSpinner()"
+    class="google btn"
+    ><ngx-fa name="google" size="lg"></ngx-fa> oogle
+  </a>
+  <div class="form">
+    <form [formGroup]="authService.form">
+      <p>
+        <input
+          type="email"
+          id="email"
+          placeholder="email"
+          formControlName="email"
+          required
+        />
+      </p>
+
+      <p>
+        <input
+          type="password"
+          id="passwrd"
+          placeholder="password"
+          formControlName="password"
+          required
+        />
+      </p>
+      <button id="btn" type="submit" (click)="Login()" (click)="showSpinner()">
+        Login
+      </button>
+    </form>
+  </div>
+  <div class="redirectToLogin">
+    <span> you Don't have an account ?</span>
+
+    <a class="redirect" routerLink="/signup">signup here</a>
+    <span> forgot password ?</span>
+    <a class="redirect" routerLink="/forgot-password">forgot password</a>
+  </div>
+
+  <ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="large"
+    color="#c7541b"
+    type="ball-clip-rotate-multiple"
+  >
+    <p style="font-size: 20px; color: whitesmoke;">
+      Oplug is loading...
+    </p>
+  </ngx-spinner>
+</div>

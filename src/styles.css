@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: burlywood;
+  background-color: #12181b;
+  font-family: "Playfair Display";
+  font-weight: 700;
+}
+
+snack-bar-container,
+.notification simple-snack-bar {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+snack-bar-container,
+.success {
+  background-color: #3e3636;
+  color: burlywood;
+  border: 10px solid #3e3636;
+  height: auto;
+  border-radius: 5px;
+}
+
+.mat-expansion-panel {
+  font-family: "Playfair Display";
+  color: burlywood;
+  font-weight: 500;
+  background-color: blueviolet;
+}
+.mat-expansion-panel-header {
+  color: #ff6d10;
+  background: #5d5d5a;
+}
+
+.mat-expansion-panel-body {
+  background: #12181b;
+  text-decoration: none;
+  color: burlywood;
+  font-family: "Playfair Display";
+}
+
+/*media queries*/
+@media screen and (max-width: 650px) {
+  .main-nav a {
+    font-weight: 400;
+    font-size: 1em;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.mat-dialog-container {
+  background-color: #3e3636;
+  color: burlywood;
+  text-align: center;
+  display: block;
+  padding: 0px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow: auto;
+  outline: 0;
+  width: 50%;
+  height: auto;
+  min-height: inherit;
+  max-height: inherit;
+}

@@ -1,0 +1,293 @@
+/*main container*/
+
+.container {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  color: burlywood;
+}
+
+h3 {
+  margin-top: 15px;
+  text-align: center;
+  color: burlywood;
+}
+header {
+  text-align: center;
+  margin: 0;
+}
+
+/*logo style starts here*/
+#oplug-logo,
+.logo {
+  display: inline-flex;
+  width: 180px;
+  height: auto;
+  position: relative;
+  animation-name: oplug-log;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes oplug-log {
+  0% {
+    top: -50px;
+  }
+  100% {
+    top: 3px;
+  }
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/*logo style ends here*/
+
+/*auto scroll on humber style starts here*/
+#routelet {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* auto scroll on humberger style ends here*/
+
+/* Navigation style starts here*/
+.main-nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.main-nav a {
+  background: #2a2e35;
+  font-weight: 700;
+  font-size: 1.5em;
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: #ff6d24;
+
+  border-radius: 10px;
+  opacity: 0;
+  animation: nav;
+  animation-duration: 500ms;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes nav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-nav a:hover {
+  background: burlywood;
+  color: black;
+  border: 1px solid #000;
+}
+
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: burlywood;
+  background-color: #ff6d15;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #ff6d15;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/*navigation style ends here*/
+
+/*humberger open and close starts here*/
+#span {
+  position: absolute;
+  margin-top: 10px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #ff6d15;
+  cursor: pointer;
+}
+
+.sidenav {
+  box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  font-weight: 500;
+  font-size: 20px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  color: burlywood;
+  background-color: #2a2e35;
+  overflow-x: hidden;
+  transition: 0.5s ease-in-out;
+  text-transform: uppercase;
+  padding-top: 60px;
+}
+
+.sidenav button {
+  transition: color 0.4s ease;
+  border: 4px solid blueviolet;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  color: burlywood;
+  margin-top: 10px;
+  margin: 5px;
+  transition: 0.3s;
+  border-radius: 16px;
+}
+hr {
+  border: 3px dashed #ff6d15;
+}
+.sidenav button:hover {
+  background-color: #ff6d15;
+  color: #f1f1f1;
+  border: red;
+}
+
+.sidenav .closebtn {
+  color: #ff6d15;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/*humberger open and close ends here*/
+
+/*dashboard center styles and icons style starts here*/
+
+.center-message {
+  height: 105px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: rgba(34, 130, 50, 0.2);
+  border: none;
+}
+
+h3 {
+  padding-top: 10px;
+  margin-top: 15px;
+  text-align: center;
+  color: burlywood;
+}
+h2 {
+  padding-top: 10px;
+  margin-top: 13px;
+  text-align: center;
+  color: burlywood;
+}
+img {
+  border: 2px solid #ff6d24;
+  background-color: burlywood;
+  width: 150px;
+  margin-bottom: 10px;
+  height: auto;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+img:hover {
+  background: rgba(254, 140, 80, 0.7);
+  border-radius: 10px;
+  border: burlywood;
+  transition: ease-in-out;
+}
+
+.wrapper {
+  margin-top: 30px;
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+  text-align: center;
+  justify-content: center;
+  max-width: 150px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.icon-container {
+  text-align: center;
+  max-width: 200px;
+}
+/*dashboard icons ends here*/
+
+/*media queries starts here*/
+@media screen and (max-width: 600px) {
+  .main-nav a {
+    font-weight: 400;
+    font-size: 1em;
+    padding: 0.5rem;
+  }
+
+  .wrapper {
+    margin-top: 30px;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    max-width: 150px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 2fr);
+  }
+
+  img {
+    border: 2px solid #ff6d24;
+    background-color: burlywood;
+    width: 100px;
+    margin-bottom: 10px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/*media queries ends here*/

@@ -1,0 +1,882 @@
+<header class="container">
+  <div class="logo">
+    <a routerLink="/"
+      ><svg
+        id="oplug-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        width="358.105"
+        height="157.621"
+        viewBox="0 0 358.105 157.621"
+      >
+        <g transform="translate(-131.895)">
+          <g transform="translate(-681 -529)">
+            <g transform="translate(690 13)">
+              <path
+                d="M10,0V32.728L28.06,48.16"
+                transform="translate(345.182 595.984)"
+                fill="#ff6d24"
+                stroke="#ff6d24"
+                stroke-width="7"
+              />
+              <path
+                d="M25.973,0V32.728L10,48.16"
+                transform="translate(375.363 595.984)"
+                fill="#ff6d24"
+                stroke="#ff6d24"
+                stroke-width="7"
+              />
+              <line
+                y2="24"
+                transform="translate(391.5 589.5)"
+                fill="none"
+                stroke="#ff6d24"
+                stroke-width="7"
+              />
+              <line
+                y2="44"
+                transform="translate(379.5 576.5)"
+                fill="none"
+                stroke="#ff6d24"
+                stroke-width="7"
+              />
+              <line
+                y2="24"
+                transform="translate(364.5 589.5)"
+                fill="none"
+                stroke="#ff6d24"
+                stroke-width="7"
+              />
+            </g>
+            <text
+              transform="translate(943 659)"
+              fill="#ff6d24"
+              font-size="109"
+              font-family="SegoeUI-Bold, Segoe UI"
+              font-weight="700"
+            >
+              <tspan x="-90.612" y="0">Opl</tspan>
+            </text>
+            <text
+              transform="translate(1137 647)"
+              fill="#ff6d24"
+              font-size="109"
+              font-family="SegoeUI-Bold, Segoe UI"
+              font-weight="700"
+            >
+              <tspan x="-33.743" y="0">g</tspan>
+            </text>
+          </g>
+          <g transform="translate(131.932 82)">
+            <line
+              x1="338.568"
+              y2="5"
+              transform="translate(0 6.5)"
+              fill="none"
+              stroke="#ff6d24"
+              stroke-width="5"
+            />
+            <g
+              transform="translate(24.068)"
+              fill="#ff6d24"
+              stroke="#707070"
+              stroke-width="1"
+            >
+              <circle cx="11.5" cy="11.5" r="11.5" stroke="none" />
+              <circle cx="11.5" cy="11.5" r="11" fill="none" />
+            </g>
+          </g>
+          <line
+            x2="1"
+            y2="29"
+            transform="translate(388.5 128.5)"
+            fill="none"
+            stroke="#ff6d24"
+            stroke-width="7"
+          />
+        </g>
+      </svg>
+    </a>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li>
+        <a routerLink="/dashboard">
+          <ngx-fa name="home" size="lg"></ngx-fa>
+        </a>
+      </li>
+      <li>
+        <a (click)="authService.SignOut()">
+          <ngx-fa name="sign-out" size="lg"></ngx-fa>
+        </a>
+      </li>
+      <li>
+        <a (click)="openDialog()"><ngx-fa name="user" size="lg"></ngx-fa> </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<!--side navbar starts here ---it holds the complete registration drop down-->
+
+<span id="span" (click)="openNav()">&#9776;</span>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <div><h1>Fill all Form to Complete Registeration</h1></div>
+  <mat-accordion class="example-headers-align" id="accorn">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Salons
+        </mat-panel-title>
+        <mat-panel-description>
+          select your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['barber']" (click)="scroll()">Barbers</a>
+        </mat-list-item>
+        <mat-list-item mat-button
+          ><a [routerLink]="['makeover']" (click)="scroll()"
+            >MakeOver/Make-up
+          </a></mat-list-item
+        >
+        <mat-list-item>
+          <a [routerLink]="['nailfixer']" (click)="scroll()">Nail-fixers</a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['hairdresser']" (click)="scroll()"
+            >Hair-dressers</a
+          >
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Technicians
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['Refridgerator-repair']" (click)="scroll()"
+            >Refridgerator Repairs</a
+          >
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['airconditon-repair']" (click)="scroll()"
+            >AirCondtion Repairs</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a [routerLink]="['phone-computer-repair']" (click)="scroll()"
+            >Mobile Phone and Computer Repairs
+          </a>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Vehicles
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['car-dealer']" (click)="scroll()">Car Dealers</a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['car-spare-parts']" (click)="scroll()"
+            >Car Spare Parts</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a [routerLink]="['truck-trialers-parts']" (click)="scroll()"
+            >Trucks and Trailers Spare Parts</a
+          >
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Electronic
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['home-accessory']" (click)="scroll()"
+            >Home accessory sells</a
+          >
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['mobile-phone-accessory']" (click)="scroll()"
+            >Mobile phone accessory sells
+          </a></mat-list-item
+        >
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Designers
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['all-design-work']" (click)="scroll()">Brochure</a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['all-design-work']" (click)="scroll()">
+            vest & polo etc</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a [routerLink]="['all-design-work']" (click)="scroll()"
+            >All design work</a
+          >
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Lives Stock
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['fish-pond']" (click)="scroll()">Fish Pond </a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['poultry']" (click)="scroll()"
+            >Poultery</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a [routerLink]="['piggery']" (click)="scroll()">piggery </a>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h3>Mechanics</h3>
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['generator-repair']" (click)="scroll()"
+            >Generator Repairs</a
+          >
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['cars-buses-repair']" (click)="scroll()"
+            >Cars & Buses Repairs</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a [routerLink]="['truck-trailer-repair']" (click)="scroll()"
+            >Truck and Trailers Repairs</a
+          >
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['vulcanizers']" (click)="scroll()"
+            >Vulcanizer</a
+          ></mat-list-item
+        >
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Electricals
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['electrical-parts']" (click)="scroll()"
+            >electrical-parts sells</a
+          >
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['electricians']" (click)="scroll()"
+            >Electricians</a
+          ></mat-list-item
+        >
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Fashion
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['boutique']" (click)="scroll()">Boutiques</a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['Tailors']" (click)="scroll()">
+            Tailors</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a [routerLink]="['designers']" (click)="scroll()"> designers</a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['cosmetics']" (click)="scroll()">
+            Cosmetics
+          </a></mat-list-item
+        >
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Food
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['bakers']" (click)="scroll()">Baker's</a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['Resturants']" (click)="scroll()"
+            >Resturants</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a [routerLink]="['frozen-foods']" (click)="scroll()">Frozen Food</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Carpentery
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['furnitures']" (click)="scroll()">Furniture</a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['Upholstery']" (click)="scroll()"
+            >Upholstery</a
+          ></mat-list-item
+        >
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Building and Construction
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['Plumbers']" (click)="scroll()">Plumbers</a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['welders']" (click)="scroll()">
+            Welders</a
+          ></mat-list-item
+        >
+        <mat-list-item>
+          <a [routerLink]="['Painters']" (click)="scroll()">Painters </a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['interio-exterio-decorations']" (click)="scroll()"
+            >Interior & Exterior Decoration
+          </a></mat-list-item
+        >
+        <mat-list-item
+          ><a [routerLink]="['land-survey']" (click)="scroll()">
+            Land & Quantity Survey
+          </a></mat-list-item
+        >
+        <mat-list-item
+          ><a [routerLink]="['building-materials']" (click)="scroll()">
+            Building Materials
+          </a></mat-list-item
+        >
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          photography and videos
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['photographers']" (click)="scroll()"
+            >Photographers</a
+          >
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Agency
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['house-agent']" (click)="scroll()">House Agent </a>
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['shop-agent']" (click)="scroll()"
+            >Shop Agent
+          </a></mat-list-item
+        >
+        <mat-list-item>
+          <a [routerLink]="['land-agent']" (click)="scroll()">Land Agents</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          supermarkets, stores and Pharmacy
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['supermarkets']" (click)="scroll()"
+            >Supermarkets</a
+          >
+        </mat-list-item>
+        <mat-list-item
+          ><a [routerLink]="['pharmacy']" (click)="scroll()"
+            >Pharmacy</a
+          ></mat-list-item
+        >
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Laundry and Dry Cleaning
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['laundry']" (click)="scroll()">Laundry</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Fumigation
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['fumigation']" (click)="scroll()">Fumigation</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Car towing
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['Car-towing']" (click)="scroll()"> Towing Truck</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Cyber Cafe
+        </mat-panel-title>
+        <mat-panel-description>
+          choose your field
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item
+          ><a [routerLink]="['Cyber-Cafe']" (click)="scroll()">Cyber Cafe</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div id="routelet">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<!--sidenavbar ends here-->
+
+<div class="center-message">
+  <h2 style="font-weight: 400;"><b>search for the nearest service</b></h2>
+  <h3 style="font-weight: 200;">who do you need at this moment...</h3>
+</div>
+<div class="wrapper">
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/barber.png" alt="Barber" />
+    <h3>Barber</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/make-up-kit.png" alt="MakeOver" />
+    <h3>MakeOver</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/nail-polish.png" alt="Nail-Fixer" />
+    <h3>Nail-Fixer</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/woman-hair.png" alt="Hair-Dresser" />
+    <h3>Hair-Dresser</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/air-conditioner.png"
+      alt="Air-condition-repair"
+    />
+    <h3>Air-condition-repair</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/fridge.png"
+      alt="Refridgerator-Repair"
+    />
+    <h3>Refridgerator-Repair</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/process.png"
+      alt="Phone-and-Computer-Repair"
+    />
+    <h3>Phone-and-Computer-Repair</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/car.png" alt="Car-Dealers" />
+    <h3>Car-Dealers</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/tires.png" alt="Car-Spare-parts" />
+    <h3>Car-Spare-parts</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/water-pump.png"
+      alt="truck-trailers-parts"
+    />
+    <h3>truck-trailers-parts</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/phone-access.png"
+      alt="Phone-accessory-sells"
+    />
+    <h3>Phone-accessory-sells</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/pet-bed.png"
+      alt="Home-accessory-sells"
+    />
+    <h3>Home-accessory-sells</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/pond.png" alt="Fish-Pond" />
+    <h3>Fish-Pond</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/chicken.png" alt="Poultry" />
+    <h3>Poultry</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/creativity.png" alt="Designers" />
+    <h3>Designers</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/pig.png" alt="Piggery" />
+    <h3>Piggery</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/vulcanizer.png" alt="Vulcanizer" />
+    <h3>Vulcanizer</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/car-parts.png"
+      alt="truck-trailer-repair"
+    />
+    <h3>truck-trailer-repair</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/generator-repair.png"
+      alt="Generator-Repair"
+    />
+    <h3>Generator-Repair</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/car-repair.png"
+      alt="Car-and Buses-repair"
+    />
+    <h3>Car-and Buses-repair</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/dress.png" alt="Boutiques" />
+    <h3>Boutiques</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/sewing-machine.png"
+      alt="fashion-designers"
+    />
+    <h3>fashion-Designers</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/skincare.png" alt="cosmetics" />
+    <h3>Cosmetics</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/tailor.png" alt="Tailors" />
+    <h3>Tailor</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/plug.png"
+      alt="Electrical-parts-sells"
+    />
+    <h3>Electrical-parts-sells</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/electrician.png" alt="Electrician" />
+    <h3>Electrician</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/dish.png" alt="Resturants" />
+    <h3>Resturants</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/fish.png" alt="frozen-food" />
+    <h3>frozen-food</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/chef.png" alt="Baker" />
+    <h3>Baker</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/sofa.png" alt="Furniture" />
+    <h3>Furniture</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/office-chair.png" alt="Upholstery" />
+    <h3>Upholstery</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/plumber.png" alt="plumber" />
+    <h3>Plumber</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/welder.png" alt="welder" />
+    <h3>Welder</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/painter.png" alt="Painters" />
+    <h3>Painters</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/vase.png"
+      alt="interio-exterio-decorations"
+    />
+    <h3>Interio-Exterio-Decorations</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/tool.png" alt="land-survey" />
+    <h3>Land-Survey</h3>
+  </div>
+
+  <div class="icon-container">
+    <img
+      src=".../../../../../assets/img/under-construction.png"
+      alt="building-materials"
+    />
+    <h3>Building-Materials</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/camera.png" alt="photography" />
+    <h3>photography</h3>
+  </div>
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/house-agent.png" alt="house-agent" />
+    <h3>house-agent</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/land-agent.png" alt="land-agent" />
+    <h3>Land-Agent</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/shop-agent.png" alt="shop-agent" />
+    <h3>Shop-agent</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/shopper.png" alt="supermarket" />
+    <h3>Supermarkets</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/pharmacy.png" alt="Pharmacy" />
+    <h3>Pharmacy</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/iron-board.png" alt="Laundry" />
+    <h3>Laundry</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/fumigator.png" alt="Fumigation" />
+    <h3>Fumigator</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/tow-truck.png" alt="Towing-Truck" />
+    <h3>Towing-Truck</h3>
+  </div>
+
+  <div class="icon-container">
+    <img src=".../../../../../assets/img/coffee-cup.png" alt="Cyber-Cafe" />
+    <h3>Cyber-Cafe</h3>
+  </div>
+</div>

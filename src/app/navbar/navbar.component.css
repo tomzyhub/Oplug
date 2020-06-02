@@ -1,0 +1,82 @@
+header {
+  text-align: center;
+  margin: 0;
+}
+
+#oplug-logo,
+.logo {
+  display: block;
+  width: 180px;
+  height: auto;
+  position: relative;
+  animation-name: oplug-log;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes oplug-log {
+  0% {
+    top: -50px;
+  }
+  100% {
+    top: 3px;
+  }
+}
+
+/* Navigation */
+.main-nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.main-nav a {
+  background: #2a2e35;
+  font-weight: 700;
+  font-size: 1.5em;
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: #ff6d24;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  opacity: 0;
+  animation: nav;
+  animation-duration: 500ms;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes nav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-nav a:hover {
+  background: white;
+  color: #ff6d24;
+  border: 1px solid #ff6d24;
+}
+
+/* Top Container 
+.top-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "showcase showcase top-box-a"
+    "showcase showcase top-box-b";
+}*/
+.container {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  color: whitesmoke;
+}

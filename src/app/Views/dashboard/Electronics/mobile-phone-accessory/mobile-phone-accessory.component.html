@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>Mobile Phone Accessory Registration form</h2>
+  <h4>please fill out all fields correctly</h4>
+  <form id="contactForm" [formGroup]="formservice.form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <p>
+        <input matInput placeholder="country* " formControlName="country" />
+      </p>
+      <mat-error>This field is mandatory.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <p>
+        <input
+          matInput
+          placeholder="business-&-occupation "
+          formControlName="occupation"
+        />
+      </p>
+      <mat-error
+        >This field is mandatory and its auto-generates name.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <p>
+        <input matInput placeholder=" state*" formControlName="state" />
+      </p>
+      <mat-error>state cannot be emtpy.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <p>
+        <input matInput placeholder=" city*" formControlName="city" />
+      </p>
+      <mat-error>city cannot be empty.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <p>
+        <input
+          matInput
+          placeholder=" phone Number*"
+          formControlName="phonenumber"
+        />
+      </p>
+      <mat-error> Number field is mandatory.</mat-error>
+    </mat-form-field>
+
+    <p class="full">
+      <button
+        type="submit"
+        [disabled]="formservice.form.invalid"
+        mat-raised-button
+        color="warn"
+      >
+        Next
+      </button>
+    </p>
+  </form>
+</div>

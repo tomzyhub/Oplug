@@ -1,0 +1,36 @@
+#pop {
+  height: 600px;
+  width: 500px;
+  text-align: center;
+}
+
+img {
+  width: 165px;
+  height: auto;
+  border-radius: 15px;
+}
+
+.btn {
+  text-transform: uppercase;
+  margin-top: 10px;
+  width: 50%;
+  padding: 0.9em;
+  background: #2a2e35;
+  color: #ff6d10;
+  border-radius: 10px;
+  border: 2px solid blueviolet;
+}
+
+.btn:hover {
+  background-color: blueviolet;
+  color: white;
+  transition: 300ms ease-in;
+  border: 2px solid white;
+}
+
+@media screen and (max-height: 450px) {
+  #pop {
+    height: auto;
+    width: 250%;
+  }
+}

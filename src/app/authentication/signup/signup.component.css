@@ -1,0 +1,121 @@
+.container1 {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  height: auto;
+  color: burlywood;
+  text-align: center;
+}
+span {
+  color: burlywood;
+  font-size: 30px;
+}
+
+.wrapper {
+  box-shadow: 0 0 20px 0 rgb(255, 94, 0);
+}
+
+.wrapper h2 {
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-flex;
+}
+.wrapper > * {
+  padding: 1.753em;
+  font-weight: 700;
+}
+
+.signup-board a {
+  display: block;
+  background: #2a2e35;
+  font-weight: 700;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: #ff6d24;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin: 20px 50px 5px;
+  cursor: pointer;
+}
+.signup-board .redirect:hover {
+  background: burlywood;
+  color: #ff6d24;
+  border: 1px;
+}
+
+.signup-board {
+  max-width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  padding: 1em;
+  height: auto;
+  color: burlywood;
+  text-align: center;
+  border: 2px solid #c7541b;
+  border-radius: 3px;
+  box-shadow: 0 0 20px 0 #c7541b;
+}
+
+.signup-board .fb:hover {
+  background: #3700b3;
+  color: burlywood;
+  border: 1px;
+  font-weight: 700;
+}
+
+.signup-board .google:hover {
+  background: #f44336;
+  color: burlywood;
+  border: 1px;
+  font-weight: 700;
+}
+
+#email,
+#passwrd {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ff6d24;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #2a2e35;
+  color: burlywood;
+}
+
+#btn {
+  background-color: #2a2e35;
+
+  color: #ff6d24;
+  width: 60%;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 20px;
+  cursor: pointer;
+}
+.form #btn:hover {
+  background: #ff6f00;
+  color: burlywood;
+  border: 1px;
+}
+
+/* LARGE SCREENS */
+@media (min-width: 700px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .wrapper > * {
+    padding: 2em;
+  }
+}
