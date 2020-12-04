@@ -140,7 +140,7 @@ import { ProfileComponent } from "./Views/profile/profile.component";
     WeldersComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   entryComponents: [ProfileComponent],
   imports: [
@@ -158,9 +158,9 @@ import { ProfileComponent } from "./Views/profile/profile.component";
     AngularFireModule.initializeApp(environment.firebase, "oplug"),
     AngularFireModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule // imports firebase/auth, only needed for auth features,
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
   ],
   providers: [AuthService, NotificationService, DashboardService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

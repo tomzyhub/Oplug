@@ -7,7 +7,7 @@ body {
   color: burlywood;
   background-color: #12181b;
   font-family: "Playfair Display";
-  font-weight: 700;
+  font-weight: 500;
 }
 
 snack-bar-container,
@@ -31,6 +31,7 @@ snack-bar-container,
   font-weight: 500;
   background-color: blueviolet;
 }
+
 .mat-expansion-panel-header {
   color: #ff6d10;
   background: #5d5d5a;
@@ -56,6 +57,7 @@ snack-bar-container,
   .sidenav {
     padding-top: 15px;
   }
+
   .sidenav a {
     font-size: 18px;
   }

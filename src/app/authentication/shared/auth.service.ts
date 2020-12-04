@@ -60,7 +60,7 @@ export class AuthService {
     try {
       if (this.form.valid) {
         const values = this.form.value;
-        const result = await this.afAuth.auth
+        await this.afAuth.auth
           .createUserWithEmailAndPassword(values.email, values.password)
           .then((result) => {
             this.SendVerificationMail();
@@ -71,15 +71,15 @@ export class AuthService {
           });
       }
     } catch (error) {
-      let eirr = error;
-      if (eirr.code === "auth/email-already-in-use") {
+      let err = error;
+      if (err.code === "auth/email-already-in-use") {
         let response = "sorry email is already in-use ";
         this.message.success(response);
-      } else if (eirr.code === "auth/weak-password") {
-        let response = eirr.message;
+      } else if (err.code === "auth/weak-password") {
+        let response = err.message;
         this.message.success(response);
-      } else if (eirr.code === "auth/invalid-email") {
-        let response = eirr.message;
+      } else if (err.code === "auth/invalid-email") {
+        let response = err.message;
         this.message.success(response);
       }
     }
@@ -90,7 +90,7 @@ export class AuthService {
     try {
       if (this.form.valid) {
         const values = this.form.value;
-        const result = await this.afAuth.auth
+        await this.afAuth.auth
           .signInWithEmailAndPassword(values.email, values.password)
           .then((result) => {
             this.ngZone.run(() => {
@@ -123,8 +123,8 @@ export class AuthService {
   }
 
   // Sign in with email/password
-  SignIn(email, password) {
-    return this.afAuth.auth
+  async SignIn(email, password) {
+    await this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
@@ -158,7 +158,7 @@ export class AuthService {
   // Reset Forggot password
   async ForgotPassword() {
     const values = this.form3.value;
-    const result = await this.afAuth.auth
+    await this.afAuth.auth
       .sendPasswordResetEmail(values.email)
       .then(() => {
         this.ngZone.run(() => {

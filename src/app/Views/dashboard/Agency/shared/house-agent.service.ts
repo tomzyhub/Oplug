@@ -3,7 +3,7 @@ import { UserformModule } from "../userform/userform.module";
 import { AuthService } from "../../../../authentication/shared/auth.service";
 import {
   AngularFirestore,
-  AngularFirestoreDocument
+  AngularFirestoreDocument,
 } from "@angular/fire/firestore";
 
 import { FormGroup, FormControl, Validators } from "@angular/forms";
@@ -11,7 +11,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class HouseAgentService {
   dbcollections: AngularFirestoreDocument<UserformModule>;
@@ -35,8 +35,8 @@ export class HouseAgentService {
       phonenumber: new FormControl("", [
         Validators.required,
         Validators.maxLength(11),
-        Validators.minLength(5)
-      ])
+        Validators.minLength(5),
+      ]),
     });
   }
   //setting form to initial stage
@@ -46,7 +46,7 @@ export class HouseAgentService {
       country: "",
       state: "",
       city: "",
-      phonenumber: ""
+      phonenumber: "",
     });
   }
   //adding items to database
